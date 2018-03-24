@@ -25,7 +25,6 @@ client.debug = function(msg) {
 }
 
 function connectCallback() {
-  document.getElementById('stomp-status').innerHTML = "It has now successfully connected to a stomp server serving price updates for some foreign exchange currency pairs.";
      client.subscribe("/fx/prices", function(message) {
     // called when the client receives a STOMP message from the server
     if (message.body) {
@@ -43,8 +42,7 @@ client.connect({}, connectCallback, function(error) {
 
  
 
-const exampleSparkline = document.getElementById('example-sparkline')
-Sparkline.draw(exampleSparkline, [1, 2, 3, 6, 8, 20, 2, 2, 4, 2, 3])
+
 //Object skeleton to load the initial grid, actual inistal data should be received from an 
 //API and then the object should be updated for any update
 const tableObject = [
